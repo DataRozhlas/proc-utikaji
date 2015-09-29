@@ -10,6 +10,7 @@ data = d3.csv.parse ig.data['odkud-utikaji'], (row) ->
     {value, subtotal}
   row.africa = row.afrika == "TRUE"
   row.total = parseInt row.celkem, 10
+  row.countryName = ig.countryCodes[row.citizen]
   row
 
 data.length = 20
@@ -27,7 +28,7 @@ for datum in data
     ..datum datum
     ..append \span
       ..attr \class \title
-      ..html (.citizen)
+      ..html (.countryName)
     ..append \div
       ..attr \class \bar
       ..append \div
