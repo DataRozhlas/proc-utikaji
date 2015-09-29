@@ -41,8 +41,14 @@ for datum in data
         ..attr \class \months
     ..append \div
       ..attr \class \overlay
-      ..on \mouseover -> highlightItem it
-      ..on \mouseout -> downlightItem it
+      ..on \mouseover (datum) ->
+        datum.highlightRequested = yes
+        <~ setTimeout _, 200
+        return unless datum.highlightRequested
+        highlightItem datum
+      ..on \mouseout ->
+        it.highlightRequested = false
+        downlightItem it
 
 highlightItem = (datum) ->
   if datum.downlighting
