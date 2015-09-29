@@ -8,6 +8,7 @@ data = d3.csv.parse ig.data['odkud-utikaji'], (row) ->
     subtotal += previousValue
     previousValue = value
     {value, subtotal}
+  row.africa = row.afrika == "TRUE"
   row.total = parseInt row.celkem, 10
   row
 
@@ -22,6 +23,7 @@ xScale = d3.scale.linear!
 list = container.append \ul
 for datum in data
   datum.element = list.append \li
+    ..classed \africa datum.africa
     ..datum datum
     ..append \span
       ..attr \class \title
