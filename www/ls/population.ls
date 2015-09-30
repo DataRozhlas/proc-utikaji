@@ -21,6 +21,9 @@ margin =
   bottom: 20
   left: 60
   right: 40
+container
+  ..append \h3 .html "V Nigérii bude kolem roku 2080 žít více lidí, než v Evropě"
+  ..append \h4 .html "Populace Afriky přesáhla evropskou již v 80. letech"
 svg = container.append \svg
   ..attr \width width + margin.left + margin.right
   ..attr \height height + margin.top + margin.bottom

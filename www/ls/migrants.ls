@@ -22,6 +22,13 @@ xScale = d3.scale.linear!
   ..domain [0 data.0.total]
   ..range [0 100]
 
+container
+  ..append \h3
+    ..html "Nejvýznamnějšími zdroji afrických migrantů jsou Eritrea, Nigérie, Somálsko, Mali a Gambie"
+  ..append \h4
+    ..html "Od roku 2013 z nich uteklo téměř 200 000 lidí"
+
+
 list = container.append \ul
 for datum in data
   datum.element = list.append \li
