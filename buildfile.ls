@@ -11,9 +11,10 @@ externalStyles =
   ...
 
 externalData =
+  "style": "#__dirname/www/screen.css"
   "odkud-utikaji": "#__dirname/data/odkud-utikaji.csv"
 
-preferScripts = <[ postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
+preferScripts = <[ utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>

@@ -1,0 +1,95 @@
+&.migrants
+  ul
+    position relative
+    list-style-type none
+    margin 0px
+    padding 0px
+    width 100%
+    float left
+    margin-top 50px
+    width 1000px
+    li
+      width 100%
+      float left
+      height 36px
+      transition top 0.6s
+      position relative
+      .overlay
+        position absolute
+        top 0px
+        left 0px
+        width 100%
+        bottom 0px
+      .title
+        display block
+        width 360px
+        float left
+        text-align right
+        padding-right 30px
+        position relative
+        top 8px
+      .bar
+        float left
+        height 20px
+        position relative
+        top 8px
+        width 340px
+        .item
+          position relative
+          float left
+          height 100%
+          background ColorRed
+          border-top-right-radius 2px
+          border-bottom-right-radius 2px
+        .count
+          position absolute
+          white-space nowrap
+          top 1px
+          margin-left 10px
+          font-size 12px
+          opacity 1
+          transition opacity 0.4s
+        .months
+          position relative
+          width 100%
+          height 20px
+          &.active
+            background white
+          .month
+            position absolute
+            background ColorRed
+            height 10px
+            top 5px
+            animation narrowIn 0.2s
+            transform rotate(0deg)
+            transform-origin 0% 50%
+            transition transform 0.4s, top 0.2s, left 0.2s, height 0.2s, opacity 0.2s
+            border-right 1px solid white
+            opacity 1
+            &.rotated
+              top 10px
+              transform rotate(-90deg)
+            &.tall
+              top 0px
+              height 20px
+            &.exiting
+              opacity 0
+          .year
+            position absolute
+            top 16px
+            font-size 11px
+            height 11px
+            line-height @height
+            padding-left 3px
+            border-left 1px solid black
+            opacity 0
+            transition opacity 0.4s
+
+
+      &.africa .bar
+        .item
+        .month
+          background darken(ColorRed, 80%)
+
+      &.active .bar .count
+        opacity 0
