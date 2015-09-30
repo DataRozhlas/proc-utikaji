@@ -88,7 +88,7 @@ highlightYear = (yearIndex, year) ->
   detailsList.style \top -> "#{lineHeight * displayedLines.indexOf it}px"
   detailsList.select \.value .html -> "<b>#{ig.utils.formatNumber it.years[yearIndex].population * 1e3}</b> mil."
 
-highlightYear 5, 1975
+highlightYear 13, 2015
 yearWidth = (xScale 1955) - (xScale 1950)
 svg.append \g .attr \class \interactivity
   ..attr \transform "translate(#{margin.left - yearWidth / 2},#{margin.top})"
