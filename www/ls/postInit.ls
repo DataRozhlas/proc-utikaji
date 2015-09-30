@@ -5,11 +5,6 @@ font = document.createElement \link
   ..rel = 'stylesheet'
   ..type = 'text/css'
 
-
-scriptData = document.createElement \script
-  ..src = 'https://samizdat.cz/data/jizni-mesto/data/topo.js'
-
 document.getElementsByTagName 'head' .0
   ..appendChild style
   ..appendChild font
-  ..appendChild scriptData
