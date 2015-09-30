@@ -1,4 +1,6 @@
 &.migrants
+  position relative
+  float left
   ul
     position relative
     list-style-type none
@@ -6,13 +8,14 @@
     padding 0px
     width 100%
     float left
-    margin-top 50px
+    margin 20px 0px 20px 0px
     width 1000px
     li
       width 100%
       float left
       height 36px
       transition top 0.6s
+      margin 0px
       position relative
       .overlay
         position absolute
@@ -22,7 +25,7 @@
         bottom 0px
       .title
         display block
-        width 360px
+        width 250px
         float left
         text-align right
         padding-right 30px
@@ -33,7 +36,7 @@
         height 20px
         position relative
         top 8px
-        width 340px
+        width 500px
         .item
           position relative
           float left
@@ -86,10 +89,13 @@
             transition opacity 0.4s
 
 
-      &.africa .bar
-        .item
-        .month
-          background darken(ColorRed, 80%)
+      &.africa
+        .bar
+          .item
+          .month
+            background darken(ColorRed, 80%)
+        .title
+          font-weight 700
 
       &.active .bar .count
         opacity 0
