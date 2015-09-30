@@ -66,3 +66,7 @@ svg.append \g .attr \class "axis x"
       ..attr \text-anchor \middle
       ..attr \y 17
 
+drawing.append \rect
+  ..attr \class \fade
+  ..attr \width width
+  ..attr \height 225
