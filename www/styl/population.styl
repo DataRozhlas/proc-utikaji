@@ -44,3 +44,33 @@
         fill #6
     rect.fade
       fill rgba(255,255,255,0.7)
+    g.interactivity
+      rect
+        fill transparent
+        &:hover
+          fill rgba(0,0,0,0.1)
+  div.details
+    position absolute
+    top 225px
+    left 590px
+    width 200px
+    .year
+      font-weight 700
+      width 120px
+    ul
+      margin 3px 0px 0px 0px
+      list-style none
+      position relative
+      li
+        width 200px
+        margin 0px
+        position absolute
+        transition top 0.4s
+        .name
+          display inline-block
+          width 60px
+          float left
+        .value
+          display inline-block
+          b
+            font-weight 500

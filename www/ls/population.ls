@@ -23,7 +23,7 @@ margin =
   right: 40
 container
   ..append \h3 .html "V Nigérii bude kolem roku 2080 žít více lidí, než v Evropě"
-  ..append \h4 .html "Populace Afriky přesáhla evropskou již v 80. letech"
+  ..append \h4 .html "Populace Afriky přesáhla evropskou již v 90. letech"
 svg = container.append \svg
   ..attr \width width + margin.left + margin.right
   ..attr \height height + margin.top + margin.bottom
@@ -70,3 +70,32 @@ drawing.append \rect
   ..attr \class \fade
   ..attr \width width
   ..attr \height 225
+
+details = container.append \div
+  ..attr \class \details
+detailsYear = details.append \span .attr \class \year
+detailsList = details.append \ul .selectAll \li .data displayedLines .enter!append \li
+  ..append \span
+    ..attr \class \name
+    ..html -> "#{it.name}:"
+  ..append \span
+    ..attr \class \value
+
+lineHeight = 20
+highlightYear = (yearIndex, year) ->
+  displayedLines.sort (a, b) -> b.years[yearIndex].population - a.years[yearIndex].population
+  detailsYear.html "Rok #{year}"
+  detailsList.style \top -> "#{lineHeight * displayedLines.indexOf it}px"
+  detailsList.select \.value .html -> "<b>#{ig.utils.formatNumber it.years[yearIndex].population * 1e3}</b> mil."
+
+highlightYear 5, 1975
+yearWidth = (xScale 1955) - (xScale 1950)
+svg.append \g .attr \class \interactivity
+  ..attr \transform "translate(#{margin.left - yearWidth / 2},#{margin.top})"
+  ..selectAll \rect .data [1950 to 2100 by 5] .enter!append \rect
+    ..attr \x -> xScale it
+    ..attr \y 225
+    ..attr \width yearWidth
+    ..attr \height height - 225
+    ..on \mouseover (d, index) -> highlightYear index, d
+    ..on \touchstart (d, index) -> highlightYear index, d
