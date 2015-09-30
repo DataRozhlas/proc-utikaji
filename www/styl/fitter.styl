@@ -1,0 +1,292 @@
+overlayTextColor = white
+#main
+  width 980px
+#ad-special
+  display none !important
+#article
+  width 1000px
+  padding 0px
+  font-family 'Roboto', arial, helvetica,sans-serif
+  background transparent !important
+  .date
+  .image
+    display none
+  > h1
+    font-size 36px !important
+    font-weight 300
+    margin-top 31px !important
+    line-height 67.9px
+    margin-bottom 40px !important
+    color overlayTextColor
+    text-shadow 0px 0px 10px #0
+    position absolute
+    margin-left 100px !important
+    text-align left
+    z-index 40
+  p.perex
+    position relative
+    top 112px
+    left 100px
+    width 445px
+    font-weight 100
+    text-align left
+    line-height 41px
+    font-size 18px
+    color overlayTextColor
+    text-shadow 0px 0px 10px #0
+    margin 0px
+    z-index 40
+  > p
+  > ul > li
+    line-height 1.9em
+    font-size 16px
+    a
+      text-decoration underline
+      color desaturate(ColorLink, 30%) !important
+      &:hover
+        text-decoration none
+  > h2
+  > h3
+  > p
+  > ul
+    width 500px
+    margin-left 250px
+    float left
+    margin-right 0px
+  > ul
+    list-style square
+    > li
+      padding-left 17px
+      margin-left 26px !important
+      margin-bottom 5px !important
+  h2
+    font-size 28px
+    font-weight 900
+    line-height 1.5em
+    margin-bottom 1em
+    margin-top 1.5em
+  p + img
+    position relative
+    left -30px
+  p + h2
+    margin-top 1.9em
+  p[data-unhide]
+    font-size 14px
+    color #666
+    padding-left 35px
+    position relative
+    &:before
+      content "▶"
+      line-height 18px
+      text-align center
+      font-size 15px
+      position absolute
+      transform rotate(90deg)
+      top 3px
+      left 5px
+      height 19px
+      color white
+      padding-left 1px
+      width (@height - @padding-left)
+      background #b
+      border-radius 50%
+      transition background 0.3s
+    &:hover
+      cursor pointer
+      &:before
+        background #6
+
+    &.unhidden
+      display none
+  p[data-hidden]
+    display none
+    opacity 0
+    transition opacity 0.8s
+    &.unhidden
+      display block
+      color #8
+      border-left 2px solid #e
+      padding-left 12px
+  .relatedWebs
+    margin-top 70px !important
+    float left
+    width 980px
+  p iframe
+    max-width none
+    padding-top 20px
+    margin 20px 0px
+    position relative
+    left -296px
+    &.small
+      left 0px
+
+.author
+  margin-top 60px !important
+#wrapper
+  position static !important
+#wrapper-inner
+  background transparent !important
+  padding 0px !important
+.filling
+  width 100%
+  height 600px
+div.hero
+  z-index 10
+  font-family 'Roboto', arial, helvetica,sans-serif
+  position absolute
+  top 126px
+  bottom 0px
+  width 100%
+  min-width 1000px
+  background #6 url('https://samizdat.cz/data/jizni-mesto/www/img/cover.jpg') no-repeat center bottom
+  background-size cover
+  .overlay
+    position absolute
+    top 0px
+    left 0px
+    bottom 0px
+    width 100%
+    background linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 25%);
+    // background linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.3) 25%);
+    position absolute
+  span.copy
+    color overlayTextColor
+    position absolute
+    bottom 10px
+    right 10px
+    z-index 50
+    text-shadow 0px 0px 10px #0
+    font-weight 200
+    line-height 23px
+    text-align right
+    width 600px
+    .title
+      font-style normal
+      font-weight 100
+      display block
+      margin-bottom 4px
+      em
+        font-size 16px
+        font-weight 300
+        font-style normal
+    a
+      color overlayTextColor
+      text-decoration underline
+      &:hover
+        text-decoration none
+  a.scroll-btn
+    z-index 50
+    position absolute
+    top 520px
+    left 50%
+    margin-left -402px
+    text-transform uppercase
+    color overlayTextColor
+    font-weight 200
+    font-size 18px
+    text-shadow 0px 0px 10px #0
+    text-decoration none
+    padding-bottom 2px
+    transition border-bottom 0.2s
+    border-bottom 1px solid rgba(255,255,255,1)
+    &:hover
+    &:active
+      border-bottom 1px solid rgba(255,255,255,0)
+    &:hover:before
+      transform translate(-50%, 0) rotate(90deg) scale(1.1)
+      background rgba(255,255,255,0.1)
+    &:before
+      background rgba(255,255,255,0.05)
+      transition transform 0.6s, background 0.6s
+      content "›"
+      position absolute
+      top -80px
+      left 50%
+      transform translate(-50%, 0) rotate(90deg)
+      text-align center
+      line-height 52px
+      font-size 50px
+      width 60px
+      height 60px
+      border 1px solid overlayTextColor
+      font-weight 300
+      box-shadow 0px 0px 5px #fff
+      border-radius 50%
+@media screen and (max-height: 769px)
+  .scroll-btn
+    display none
+.shares
+  position absolute
+  bottom 0px
+  left 90px
+  height 60px
+  a
+    display block
+    float left
+    width @height
+    height @width
+    position relative
+    transition background 0.2s
+    z-index 50
+    img
+      max-height (@height - 28px)
+      max-width (@height - 20px)
+      width auto
+      height auto
+      position absolute
+      top 50%
+      left 50%
+      transform translate(-50%,-50%)
+      opacity 1
+      transition opacity 0.2s
+    &:hover
+      img
+        transform translate(-50%,-50%) // bug in Chrome?
+        opacity 0.9
+    &.fb
+      background #3F67C0
+      &:hover
+        background darken(#3F67C0, 20%)
+    &.tw
+      background #35B5EB
+      &:hover
+        background darken(#35B5EB, 20%)
+    &.cro
+      z-index 9
+      background #ED2D38
+      border-right 3px solid darken(#ED2D38, 30%)
+      margin-right 6px
+      &:hover
+        background darken(#ED2D38, 20%)
+  &.fixed a
+    position fixed
+    top 0px
+    left 90px
+    &:nth-child(2)
+      left 159px
+    &:nth-child(3)
+      left 219px
+
+body.web-zpravy.theme-trestnecinypolitiku
+body.web-zpravy.theme-domaci
+body.web-zpravy.theme-regiony
+body.web-zpravy.theme-evropskaunie
+body.web-zpravy.theme-data
+body.web-zpravy.theme-sochi2014
+body.web-zpravy.theme-sochi2014_data
+body.web-zpravy.theme-volby2012_eurodotace
+body.web-zpravy.theme-ep2014
+body.web-zpravy.theme-ep2014_vizitky
+body.web-zpravy.theme-ep2014_vysledky
+body.web-zpravy.theme-ep2014_rozhovory
+body.web-zpravy.theme-krym2014
+body.web-zpravy
+  background white url('https://samizdat.cz/tools/cro-parts/dekretenizer-bg.png') top repeat-x !important
+  overflow-x hidden
+
+.web-zpravy
+  background-color #FFF !important
+  #nav-sub
+    background-image none
+    .sub
+      display none
