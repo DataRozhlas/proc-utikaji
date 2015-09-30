@@ -1,0 +1,36 @@
+&.population
+  position relative
+  float left
+  margin-left 190px
+  margin-top -250px
+  margin-bottom 50px
+  svg
+    g.lines
+      path
+        fill none
+      path:nth-child(1)
+        stroke ColorRed
+        stroke-width 2.5
+      path:nth-child(2)
+        stroke rgba(ColorBlue, 70%)
+        stroke-width 1.5
+      path:nth-child(3)
+        stroke rgba(black, 20%)
+        stroke-width 1
+    g.country-names text
+      // font-variant small-caps
+      font-size 11px
+      text-transform uppercase
+      &:nth-child(1)
+        fill darken(ColorRed, 20%)
+      &:nth-child(2)
+        fill ColorBlue
+      &:nth-child(3)
+        fill lighten(black, 30%)
+    .axis
+      line
+        shape-rendering crispEdges
+        stroke #a
+      text
+        font-size 11px
+        fill #6

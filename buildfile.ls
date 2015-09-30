@@ -13,6 +13,7 @@ externalStyles =
 externalData =
   "style": "#__dirname/www/screen.css"
   "odkud-utikaji": "#__dirname/data/odkud-utikaji.csv"
+  "population": "#__dirname/data/popgraf.csv"
 
 preferScripts = <[ utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ geoUtils.js base.js ]>
