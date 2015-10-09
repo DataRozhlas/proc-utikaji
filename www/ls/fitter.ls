@@ -5,7 +5,6 @@ ig.fit = ->
   $body = $ 'body'
   $hero = $ "<div class='hero'></div>"
     ..append "<div class='overlay'></div>"
-    ..append "<span class='copy'>foto: ČTK</span>"
     ..append "<a href='#' class='scroll-btn'>Číst dál</a>"
     ..find 'a.scroll-btn' .bind 'click touchstart' (evt) ->
       evt.preventDefault!
@@ -15,10 +14,10 @@ ig.fit = ->
         .tween "scroll" scrollTween offset
   $body.prepend $hero
 
-  $ '#article h1' .html 'Jižní Město – sídliště bez lidí?'
+  $ '#article h1' .html 'Proč utíkají?'
+  mapOverlay = new MapOverlay $hero.0
 
   $filling = $ "<div class='ig filling'></div>"
-    ..css \height $hero.height! + 50
   $ "p.perex" .after $filling
 
   $shares = $ "<div class='shares'>
@@ -27,14 +26,22 @@ ig.fit = ->
     <a class='share tw' title='Sdílet na Twitteru' target='_blank' href='https://twitter.com/home?status=#shareUrl'><img src='https://samizdat.cz/tools/icons/twitter-bg-white.svg'></a>
   </div>"
   $body.prepend $shares
+
   sharesTop = $shares.offset!top
   sharesFixed = no
 
-  $ window .bind \resize ->
+  onResize = ->
     $shares.removeClass \fixed if sharesFixed
     sharesTop := $shares.offset!top
     $shares.addClass \fixed if sharesFixed
-    $filling.css \height $hero.height! + 50
+    heroHeight = $hero.height!
+    heroWidth = $hero.width!
+    $filling.css \height heroHeight + 50
+    mapOverlay.updateDimensions heroWidth, heroHeight
+
+  onResize!
+  $ window .bind \resize onResize
+
 
 
   $ window .bind \scroll ->
@@ -64,3 +71,39 @@ scrollTween = (offset) ->
       window.pageYOffset || document.documentElement.scrollTop
       offset
     (progress) -> window.scrollTo 0, interpolate progress
+
+class MapOverlay
+  (parentElement) ->
+    topo = ig.data.cover
+    features = topojson.feature topo, topo.objects."data" .features
+    {width, height, projection} = ig.utils.geo.getFittingProjection do
+      features
+      1038
+
+    @element = d3.select parentElement .append \svg
+      ..attr \width width
+      ..attr \height height
+    path = d3.geo.path!
+      ..projection projection
+    @element.selectAll \path .data features .enter!append \path
+      ..attr \d path
+
+  updateDimensions: (parentWidth, parentHeight) ->
+    xScale = parentWidth / 1600
+    yScale = parentHeight / 1170
+    ratio = Math.max xScale, yScale
+    imageWidth = 1600 * ratio
+    imageHeight = 1170 * ratio
+    leftCorner = (parentWidth - imageWidth) / 2
+    topCorner = (parentHeight - imageHeight) / 2
+
+    baseLeft = 284
+    baseTop = 226
+
+    translateLeft = ratio  * baseLeft + (parentWidth - imageWidth) / 2
+    translateTop = ratio * baseTop + (parentHeight - imageHeight) / 2
+    # console.log translateLeft, translateTop
+
+    transform = "translate(#{translateLeft}px, #{translateTop}px)"
+    transform += " scale(#ratio)"
+    @element.style \transform transform

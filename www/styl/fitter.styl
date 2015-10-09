@@ -1,4 +1,4 @@
-overlayTextColor = white
+overlayTextColor = black
 #main
   width 980px
 #ad-special
@@ -18,23 +18,24 @@ overlayTextColor = white
     line-height 67.9px
     margin-bottom 40px !important
     color overlayTextColor
-    text-shadow 0px 0px 10px #0
     position absolute
-    margin-left 100px !important
+    margin-left 60px !important
     text-align left
+    top 58%
     z-index 40
   p.perex
-    position relative
-    top 112px
-    left 100px
+    position absolute
+    top 58%
     width 445px
-    font-weight 100
+    font-weight 300
     text-align left
     line-height 41px
     font-size 18px
     color overlayTextColor
-    text-shadow 0px 0px 10px #0
+    text-shadow 0px 0px 10px white
     margin 0px
+    margin-left 60px
+    margin-top 91px
     z-index 40
   > p
   > ul > li
@@ -138,7 +139,7 @@ div.hero
   bottom 0px
   width 100%
   min-width 1000px
-  background #6 url('https://samizdat.cz/data/jizni-mesto/www/img/cover.jpg') no-repeat center bottom
+  background #f url('./img/afrika.jpg') no-repeat center
   background-size cover
   .overlay
     position absolute
@@ -146,16 +147,24 @@ div.hero
     left 0px
     bottom 0px
     width 100%
-    background linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.6) 25%);
-    // background linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0.3) 25%);
+    background linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 25%);
     position absolute
+  svg
+    position absolute
+    left 0px
+    top 0px
+    transform-origin left top
+    path
+      fill rgba(ColorRed, 0.4)
+      &:hover
+        fill rgba(ColorRed, 0.7)
+        cursor pointer
   span.copy
     color overlayTextColor
     position absolute
     bottom 10px
     right 10px
     z-index 50
-    text-shadow 0px 0px 10px #0
     font-weight 200
     line-height 23px
     text-align right
@@ -175,6 +184,7 @@ div.hero
       &:hover
         text-decoration none
   a.scroll-btn
+    display none
     z-index 50
     position absolute
     top 520px
@@ -184,7 +194,6 @@ div.hero
     color overlayTextColor
     font-weight 200
     font-size 18px
-    text-shadow 0px 0px 10px #0
     text-decoration none
     padding-bottom 2px
     transition border-bottom 0.2s
@@ -210,7 +219,6 @@ div.hero
       height 60px
       border 1px solid overlayTextColor
       font-weight 300
-      box-shadow 0px 0px 5px #fff
       border-radius 50%
 @media screen and (max-height: 769px)
   .scroll-btn
