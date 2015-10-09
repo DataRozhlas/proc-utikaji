@@ -102,7 +102,6 @@ class MapOverlay
 
     translateLeft = ratio  * baseLeft + (parentWidth - imageWidth) / 2
     translateTop = ratio * baseTop + (parentHeight - imageHeight) / 2
-    # console.log translateLeft, translateTop
 
     transform = "translate(#{translateLeft}px, #{translateTop}px)"
     transform += " scale(#ratio)"
