@@ -14,7 +14,8 @@ externalData =
   "style": "#__dirname/www/screen.css"
   "odkud-utikaji": "#__dirname/data/odkud-utikaji.csv"
   "population": "#__dirname/data/popgraf.csv"
-  "cover": "#__dirname/data/cover.topo.json"
+  "cover-geo": "#__dirname/data/cover.topo.json"
+  "cover-data": "#__dirname/data/cover.tsv"
 
 preferScripts = <[ utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ geoUtils.js base.js ]>

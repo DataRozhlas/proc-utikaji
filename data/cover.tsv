@@ -1,6 +1,7 @@
-name	population	area	gdp	literacy	literacy-male	literacy-female
-Eritrea	6527689	117600	1200	73.8	82.4	65.5
-Somálsko	10616380	637657	600			
-Nigérie	181562056	923768	6000	59.6	69.2	49.7
-Gambie	1967709	11300	1600	55.5	63.9	47.6
-CZ	10644842	78867	29900	99	99	99
+name	population	area	gdp	literacy	life	hiv	migration	belief	title
+Gambie	1967709	11300	1600	55.5	64.6	1.82	-2.12	90% muslimů, 8% křesťanů, 2 % domorodá náboženství
+Nigérie	181562056	923768	6000	59.6	53.02	3.17	-0.22	50 % muslimů, 40 % křesťanů, 10 % ostatní
+Eritrea	6527689	117600	1200	73.8	63.81	0.68	0	muslimové, koptští křesťané, římští katolíci, protestanti
+Somálsko	10616380	637657	600	37.8	51.96	0.55	-8.49	sunnitští muslimové
+Mali	16955536	1240192	1700	38.7	55.34	1.42	-2.26	95 % muslimů, 2 % křesťanů, 3 % ostatní
+Česká republika	10644842	78867	29900	99	78.48	0.05	2.33	54 % neuvádí, 34 % ateistů, 10 % katolíků, 2 % protestantů,

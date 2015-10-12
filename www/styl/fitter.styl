@@ -157,8 +157,42 @@ div.hero
     path
       fill rgba(ColorRed, 0.4)
       &:hover
+      &.active
         fill rgba(ColorRed, 0.7)
         cursor pointer
+    ellipse
+      fill transparent
+  .tooltips
+    .tooltip
+      position absolute
+      background rgba(255,255,255,0)
+      padding 1px 10px
+      border-radius 5px
+      transition background 0.4s
+      pointer-events none
+      .title
+        font-size 20px
+        color #6
+        font-weight 500
+        text-shadow 0px 0px 10px #f
+        margin 4px 0px
+        float left
+        width 100%
+      .fields
+        float left
+        width 100%
+        opacity 0
+        transition opacity 0.4s
+        margin-bottom 4px
+        line-height 22px
+        .field
+          float left
+          width 100%
+          clear left
+      &.active
+        background rgba(255,255,255,0.5)
+        .fields
+          opacity 1
   span.copy
     color overlayTextColor
     position absolute
