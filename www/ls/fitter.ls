@@ -185,8 +185,11 @@ class MapOverlay
           ..html -> "Klikněte a přečtěte si o #{it.name2} víc"
 
   gotoCountry: (country) ->
-    href = document.location.toString!split '#' .0
-    document.location = href + '#' + country.properties.name_cze
+    d3.event.preventDefault!
+    offset = $('#' + country.properties.name_cze).offset!top
+    d3.transition!
+      .duration 800
+      .tween "scroll" scrollTween offset
 
   highlightCountry: (country) ->
     @tooltips.classed \active -> it.name is country.properties.name_cze
@@ -213,3 +216,11 @@ class MapOverlay
     @svg.style \transform transform
     @tooltips.style \transform ->
       "translate(#{ratio * it.x + leftCorner}px, #{ratio * it.y + topCorner}px)"
+
+
+scrollTween = (offset) ->
+  ->
+    interpolate = d3.interpolateNumber do
+      window.pageYOffset || document.documentElement.scrollTop
+      offset
+    (progress) -> window.scrollTo 0, interpolate progress
