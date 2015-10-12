@@ -180,6 +180,9 @@ class MapOverlay
         ..selectAll \div.field .data (.fields) .enter!append \div
           ..attr \class \field
           ..html -> "#{it.field.name}: <b>#{it.field.format it.value}</b>"
+        ..append \div
+          ..attr \class \field
+          ..html -> "Klikněte a přečtěte si o #{it.name2} víc"
 
   gotoCountry: (country) ->
     href = document.location.toString!split '#' .0
