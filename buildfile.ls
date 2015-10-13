@@ -14,10 +14,11 @@ externalData =
   "style": "#__dirname/www/screen.css"
   "odkud-utikaji": "#__dirname/data/odkud-utikaji.csv"
   "population": "#__dirname/data/popgraf.csv"
+  "urbanization": "#__dirname/data/urbanizace.csv"
   "cover-geo": "#__dirname/data/cover.topo.json"
   "cover-data": "#__dirname/data/cover.tsv"
 
-preferScripts = <[ utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
+preferScripts = <[ countryCodes.js utils.js postInit.js _loadData.js ../data.js init.js _loadExternal.js]>
 deferScripts = <[ geoUtils.js base.js ]>
 develOnlyScripts = <[ _loadData.js _loadExternal.js]>
 gzippable = <[ www/index.deploy.html www/script.deploy.js ]>

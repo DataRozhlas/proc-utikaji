@@ -74,3 +74,25 @@
           display inline-block
           b
             font-weight 500
+  &.urbanization
+    margin-top 0px
+    h3
+      top 0px
+    svg
+      margin-top 25px
+      g.lines
+        path
+          stroke #6
+          stroke-width 1
+          &:nth-child(1)
+            stroke ColorRed
+            stroke-width 2.5
+      g.axis.y
+        line.extent
+          stroke #d
+          stroke-dasharray 2, 4
+    div.details
+      top 90px
+      left 665px
+      li .name
+        width 75px
