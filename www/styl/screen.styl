@@ -30,3 +30,40 @@
     font-weight 500
     color #4
     margin 6px 0px
+#article
+  h2#Gambie
+    position relative
+    a.offlink
+      position absolute
+      float left
+      font-size 16px
+      left 100%
+      top -80px
+      margin-left 40px
+      width 150px
+      font-weight normal
+      line-height 18px
+      border 1px solid darken(ColorBlue, 50%)
+      transition background 0.2s
+      background ColorBlue
+      color white
+      padding 12px 18px
+      border-radius 4px
+      ul
+        list-style-type square
+        margin-left 0px
+        font-size 14px
+        margin-top 14px
+        margin-bottom 4px
+        li
+          margin-left 20px
+          padding-left 0px
+          margin-bottom 8px
+          &:last-child
+            margin-bottom 0px
+            text-decoration underline
+      &:hover
+        text-decoration none
+        background lighten(ColorBlue, 10%)
+        li:last-child
+          text-decoration none

@@ -224,3 +224,14 @@ scrollTween = (offset) ->
       window.pageYOffset || document.documentElement.scrollTop
       offset
     (progress) -> window.scrollTo 0, interpolate progress
+
+$ 'h2#Gambie' .append do
+  "<a class='offlink' href='http://www.rozhlas.cz/zpravy/uprchlici' target='_blank'>
+    <b>Speciál o uprchlické krizi</b>
+    <ul>
+      <li>Přehrajte si 23 exkluzivních reportáží</li>
+      <li>Přečtěte si nejčastější otázky a odpovědi</li>
+      <li>Sledujte podrobné denní zpravodajství</li>
+      <li>rozhlas.cz/uprchlici</li>
+    </ul>
+  </a>"
