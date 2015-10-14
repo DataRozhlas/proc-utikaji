@@ -7,7 +7,7 @@ data = d3.csv.parse ig.data.urbanization, (row) ->
     {year, percentage}
   row.name = row.country
   row
-console.log data.0
+
 displayedLines = data
 
 
