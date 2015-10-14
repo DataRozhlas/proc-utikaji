@@ -2,7 +2,7 @@ return unless ig.containers.military
 container = d3.select ig.containers.military
 
 container.append \h3
-  ..html "Eritrea dává na armádu pětinu svého rozpočtu"
+  ..html "Eritrea dává na armádu pětinu svého HDP"
 countries =
   * name: "Gambie"
     gdp: 0.79
